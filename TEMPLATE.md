@@ -6,7 +6,7 @@ External URl
 
 ## KQL
 Data Source: [Winlogbeat](https://www.elastic.co/beats/winlogbeat)  
-Query: `winlog.provider_name:"Microsoft-Windows-Audit-CVE"`
+Query: `winlog.provider_name:"example"`
 
 Data Source: [Zeek Plugin or Framework](https://github.com/0xxon/cve-2020-0601-plugin)  
 Query: `zeek.notice.note:example`
