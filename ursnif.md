@@ -143,9 +143,9 @@ The seven steps of the Cyber Kill Chain® enhance visibility into an attack and 
 1. Weaponization
 1. Delivery
 1. Exploitation
-1. Installation <- Ursnif
-1. Command & Control <- Ursnif
-1. Actions on the Objective <- Ursnif
+1. Installation **<- Ursnif**
+1. Command & Control **<- Ursnif**
+1. Actions on the Objective **<- Ursnif**
 
 #### Reference
 https://www.lockheedmartin.com/en-us/capabilities/cyber/cyber-kill-chain.html
