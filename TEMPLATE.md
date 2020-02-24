@@ -12,7 +12,7 @@ Data Source: [Zeek Plugin or Framework](https://github.com/0xxon/cve-2020-0601-p
 Query: `zeek.notice.note:example`
 
 ## Modeling
-Modeling is an important part of analysis, however it is not 1:1 "answer" to your analytical "question". 
+Modeling is an important part of analysis, however it is not 1:1 "answer" to your analytical "question".
 
 ### MITRE ATT&CK
 MITRE ATT&CK is a globally-accessible knowledge base of adversary tactics and techniques based on real-world observations. The ATT&CK knowledge base is used as a foundation for the development of specific threat models and methodologies in the private sector, in government, and in the cybersecurity product and service community.
@@ -21,17 +21,17 @@ MITRE ATT&CK is a globally-accessible knowledge base of adversary tactics and te
 https://attack.mitre.org/
 
 ```
-Name: 
-ID: 
-Tactic: 
-Platform: 
-Data Sources: 
-Defense Bypassed: 
+Name:
+ID:
+Technique: 
+Platform:
+Data Sources:
+Defense Bypassed:
 ```
 https://attack.mitre.org/techniques/{T####}
 
 ### Diamond Model
-This is a model that lays out 4 (or in the extended model, 6) elements of an intrusion phase. Adversary, Infrastructure, Victim, and Capability. As you collect information from each "point", you can begin to make assumptions as to what the other points _could_ be. The more you have on each point, the more accurate your assumptions can be. 
+This is a model that lays out 4 (or in the extended model, 6) elements of an intrusion phase. Adversary, Infrastructure, Victim, and Capability. As you collect information from each "point", you can begin to make assumptions as to what the other points _could_ be. The more you have on each point, the more accurate your assumptions can be.
 
 This model should be used in conjunction with other intrusion models, like the Lockheed Martin Cyber Kill Chain.
 
@@ -82,7 +82,7 @@ https://www.lockheedmartin.com/en-us/capabilities/cyber/cyber-kill-chain.html
 ## Analysis Notes
 Notes for analysts on some steps to take if observed.
 
-### Collection 
+### Collection
 Examples on how to collect data for analysis.
 
 You can collect a Windows binary signature using Powershell.
