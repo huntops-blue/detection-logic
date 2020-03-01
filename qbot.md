@@ -251,13 +251,13 @@ Developed by Lockheed Martin, the Cyber Kill Chain® framework is part of the In
 
 The seven steps of the Cyber Kill Chain® enhance visibility into an attack and enrich an analyst’s understanding of an adversary’s tactics, techniques and procedures.
 
-1. Reconnaissance <- Qbot
+1. Reconnaissance **<- Qbot**
 1. Weaponization
 1. Delivery
 1. Exploitation
-1. Installation <- Qbot
-1. Command & Control <- Qbot
-1. Actions on the Objective <- Qbot
+1. Installation **<- Qbot**
+1. Command & Control **<- Qbot**
+1. Actions on the Objective **<- Qbot**
 
 #### Reference
 https://www.lockheedmartin.com/en-us/capabilities/cyber/cyber-kill-chain.html
