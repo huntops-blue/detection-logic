@@ -9,7 +9,7 @@ ECS Data Source: [Filebeat w/Zeek or Suricata Module](https://www.elastic.co/bea
 
 Query:
 ```
-(event.module: suricata OR event.module: zeek) AND ((5.2.77.18 AND destination.port: 447) OR (85.143.216.206 AND destination.port: 447) OR (186.71.150.23 AND destination.port: 449) OR (190.214.13.2 AND destination.port: 449) OR (195.133.145.31 AND destination.port: 443) OR (66.85.173.20 AND destination.port: 447) OR (93.189.41.185 AND destination.port: 447) OR (203.176.135.102 AND destination.port: 8082) OR file.hash.md5: 9149a43c1fd3c74269648223255d2a83 OR file.hash.md5: fed45d3744a23e40f0b0452334826fc2 OR file.hash.md5: acf866d6a75d9100e03d71c80e1a85d6 OR (tls.client.ja3: 72a589da586844d7f0818ce684948eea AND tls.server.ja3s: 0eec924176fb005dfa419c80ab72d27c) OR (tls.client.ja3: 72a589da586844d7f0818ce684948eea AND tls.server.ja3s: e35df3e00ca4ef31d42b34bebaa2f86e) OR (tls.client.ja3: 72a589da586844d7f0818ce684948eea AND tls.server.ja3s: 46df52e211001fa8da188599db66e0db))
+(event.module: suricata OR event.module: zeek) AND ((5.2.77.18 AND destination.port: 447) OR (85.143.216.206 AND destination.port: 447) OR (186.71.150.23 AND destination.port: 449) OR (190.214.13.2 AND destination.port: 449) OR (195.133.145.31 AND destination.port: 443) OR (66.85.173.20 AND destination.port: 447) OR (93.189.41.185 AND destination.port: 447) OR (203.176.135.102 AND destination.port: 8082) OR (5.255.96.115 AND destination.port: 443) OR (85.143.220.73 AND destination.port: 447) OR (192.3.124.40 AND (destination.port: 80 OR destination.port: 50063 OR destination.port: 49767)) OR (170.84.78.224 AND destination.port: 449) OR (212.109.220.222 AND destination.port: 447) OR (85.204.116.84 AND destination.port: 447) OR (5.182.210.226) OR url.original: img.bullforyou.com OR file.hash.md5: 9149a43c1fd3c74269648223255d2a83 OR file.hash.md5: fed45d3744a23e40f0b0452334826fc2 OR file.hash.md5: acf866d6a75d9100e03d71c80e1a85d6 OR (tls.client.ja3: 72a589da586844d7f0818ce684948eea AND tls.server.ja3s: 0eec924176fb005dfa419c80ab72d27c) OR (tls.client.ja3: 72a589da586844d7f0818ce684948eea AND tls.server.ja3s: e35df3e00ca4ef31d42b34bebaa2f86e) OR (tls.client.ja3: 72a589da586844d7f0818ce684948eea AND tls.server.ja3s: 46df52e211001fa8da188599db66e0db))
 ```
 
 ## Yara
@@ -200,14 +200,21 @@ rule Trickbot {
 ## Atomic Indicators
 ```
 5[.]2[.]77[.]18 port 447 (Trickbot, GTAG, Red4 TLS traffic)
+5[.]255[.]96[.]115 port 443 (Trickbot, GTAG, Red4 TLS traffic)
 85[.]143[.]216[.]206 port 447 (Trickbot, GTAG, Red4 TLS traffic)
+85[.]143[.]220[.]73 port 447 (Trickbot, GTAG, Red4 TLS traffic)
 186[.]71[.]150[.]23 port 449 (Trickbot, GTAG, Red4 TLS traffic)
 190[.]214[.]13[.]2 port 449 (Trickbot, GTAG, Red4 TLS traffic)
 195[.]133[.]145[.]31 port 443 (Trickbot, GTAG, Red4 TLS traffic)
 66[.]85[.]173[.]20 port 447 (Trickbot, GTAG, Red4 TLS traffic)
 93[.]189[.]41[.]185 port 447 (Trickbot, GTAG, Red4 TLS traffic)
 203[.]176[.]135[.]102 port 8082 (enumeration data exfil)
-192[.]3[.]124[.]40 (Trickbot binary)
+192[.]3[.]124[.]40 (port 80, 50063, and 49767 Trickbot PE download)
+170[.]84[.]78[.]224 port 449 (Trickbot, GTAG, Red4 TLS traffic)
+212[.]109[.]220[.]222 port 447 (Trickbot, GTAG, Red4 TLS traffic)
+85[.]204[.]116[.]84 port 447 (Trickbot, GTAG, Red4 TLS traffic)
+5[.]182[.]210[.]226 (Trickbot C2, moderate confidence)
+img[.]bullforyou[.]com (Trickbot C2, moderate confidence)
 9149a43c1fd3c74269648223255d2a83 - lastimage[.]png (Trickbot binary)
 fed45d3744a23e40f0b0452334826fc2 - lastimage[.]png (Trickbot binary)
 acf866d6a75d9100e03d71c80e1a85d6 - mini[.]png (Trickbot binary)
@@ -246,28 +253,28 @@ https://www.activeresponse.org/wp-content/uploads/2013/07/diamond.pdf
                                    ┌───────────┐                                                                             
                                    │ Adversary │                                                                             
                                    └───────────┘                                                                             
-                                         Λ                                                                                   
-                                        ╱│╲                                                                                  
-                                       ╱ │ ╲                                                                                 
- ┌──────────────┐┌─────┐┌─────┐       ╱  │  ╲       ┌───────────────────────────────────────────────────────────────────────┐
- │Capabilities  ││T1083││T1082│      ╱   │   ╲      │Infrastructure                                                         │
- │T1087         ││T1179││T1016│     ╱    │    ╲     │5[.]2[.]77[.]18 port 447                                               │
- │T1043         ││T1185││T1007│    ╱     │     ╲    │85[.]143[.]216[.]206 port 447                                          │
- │T1503         ││T1112││T1065│   ╱      │      ╲   │186[.]71[.]150[.]23 port 449                                           │
- │T1081         ││T1027││T1204│  ╱       │       ╲  │190[.]214[.]13[.]2 port 449                                            │
- │T1214         ││T1055│└─────┘ ╱        │        ╲ │195[.]133[.]145[.]31 port 443                                          │
- │T1024         ││T1060│       ▕─────────┼─────────▏│66[.]85[.]173[.]20 port 447                                            │
- │T1005         ││T1105│        ╲        │        ╱ │93[.]189[.]41[.]185 port 447                                           │
- │T1140         ││T1053│         ╲       │       ╱  │203[.]176[.]135[.]102 port 8082                                        │
- │T1089         ││T1064│          ╲      │      ╱   │192[.]3[.]124[.]40                                                     │
- │T1482         ││T1045│           ╲     │     ╱    │9149a43c1fd3c74269648223255d2a83                                       │
- │T1114         ││T1193│            ╲    │    ╱     │fed45d3744a23e40f0b0452334826fc2                                       │
- │T1106         ││T1071│             ╲   │   ╱      │acf866d6a75d9100e03d71c80e1a85d6                                       │
- └──────────────┘└─────┘              ╲  │  ╱       └───────────────────────────────────────────────────────────────────────┘
-                                       ╲ │ ╱                                                                                 
-                                        ╲│╱                                                                                  
-                                         V                                                                                   
-                                   ┌───────────┐                                                                             
+                                         Λ          ┌───────────────────────────────────────────────────────────────────────┐
+                                        ╱│╲         │Infrastructure                                                         │
+                                       ╱ │ ╲        │5[.]2[.]77[.]18 port 447 (Trickbot, GTAG, Red4 TLS traffic)            │
+ ┌──────────────┐┌─────┐┌─────┐       ╱  │  ╲       │5[.]255[.]96[.]115 port 443 (Trickbot, GTAG, Red4 TLS traffic)         │
+ │Capabilities  ││T1083││T1082│      ╱   │   ╲      │85[.]143[.]216[.]206 port 447 (Trickbot, GTAG, Red4 TLS traffic)       │
+ │T1087         ││T1179││T1016│     ╱    │    ╲     │85[.]143[.]220[.]73 port 447 (Trickbot, GTAG, Red4 TLS traffic)        │
+ │T1043         ││T1185││T1007│    ╱     │     ╲    │186[.]71[.]150[.]23 port 449 (Trickbot, GTAG, Red4 TLS traffic)        │
+ │T1503         ││T1112││T1065│   ╱      │      ╲   │190[.]214[.]13[.]2 port 449 (Trickbot, GTAG, Red4 TLS traffic)         │
+ │T1081         ││T1027││T1204│  ╱       │       ╲  │195[.]133[.]145[.]31 port 443 (Trickbot, GTAG, Red4 TLS traffic)       │
+ │T1214         ││T1055│└─────┘ ╱        │        ╲ │66[.]85[.]173[.]20 port 447 (Trickbot, GTAG, Red4 TLS traffic)         │
+ │T1024         ││T1060│       ▕─────────┼─────────▏│93[.]189[.]41[.]185 port 447 (Trickbot, GTAG, Red4 TLS traffic)        │
+ │T1005         ││T1105│        ╲        │        ╱ │203[.]176[.]135[.]102 port 8082 (enumeration data exfil)               │
+ │T1140         ││T1053│         ╲       │       ╱  │192[.]3[.]124[.]40 (port 80, 50063, and 49767 Trickbot PE download)    │
+ │T1089         ││T1064│          ╲      │      ╱   │170[.]84[.]78[.]224 port 449 (Trickbot, GTAG, Red4 TLS traffic)        │
+ │T1482         ││T1045│           ╲     │     ╱    │212[.]109[.]220[.]222 port 447 (Trickbot, GTAG, Red4 TLS traffic)      │
+ │T1114         ││T1193│            ╲    │    ╱     │85[.]204[.]116[.]84 port 447 (Trickbot, GTAG, Red4 TLS traffic)        │
+ │T1106         ││T1071│             ╲   │   ╱      │5[.]182[.]210[.]226 (Trickbot C2, moderate confidence)                 │
+ └──────────────┘└─────┘              ╲  │  ╱       │img[.]bullforyou[.]com (Trickbot C2, moderate confidence)              │
+                                       ╲ │ ╱        │9149a43c1fd3c74269648223255d2a83 - lastimage[.]png (Trickbot binary)   │
+                                        ╲│╱         │fed45d3744a23e40f0b0452334826fc2 - lastimage[.]png (Trickbot binary)   │
+                                         V          │acf866d6a75d9100e03d71c80e1a85d6 - mini[.]png (Trickbot binary)        │
+                                   ┌───────────┐    └───────────────────────────────────────────────────────────────────────┘
                                    │  Victim   │                                                                             
                                    └───────────┘                                                                             
 ```
