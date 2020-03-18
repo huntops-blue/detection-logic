@@ -256,7 +256,9 @@ shop[.]artaffinittee[.]com - Part of Hancitor infrastructure
 8eb933c84e7777c7b623f19489a59a2a - VBScript dropper (SE670131329809.vbs)
 19fe0b844a00c57f60a0d9d29e6974e7 - Part of Hancitor infrastructure (1)
 204f36fb236065964964a61d4d7b1b9c - Part of Hancitor infrastructure (2)
+[A-Za-z]{2}-[0-9]{12}_[0-9]{4}.zip - Regex for the VBScript archive
 ```
+[Email subject samples](https://pastebin.com/raw/a2hpbVKh)
 
 ## Modeling
 Modeling is an important part of analysis, however it is not 1:1 "answer" to your analytical "question".
