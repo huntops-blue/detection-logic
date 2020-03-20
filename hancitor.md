@@ -21,133 +21,22 @@ Query:
 ```
 /*
    YARA Rule Set
-   Author: Andrew D. Pease - HuntOps.blue
-   Date: 2020-03-18
-   Identifier: Hancitor
-   Reference: https://huntops.blue/2020/03/20/hancitor.html
+   Author: Andrew D. Pease HuntOps.blue
+   Date: 2020-03-19
+   Identifier: hancitor
+   Reference: https://github.com/Neo23x0/yarGen
 */
 
 /* Rule Set ----------------------------------------------------------------- */
 
-rule Hancitor {
-   meta:
-      description = "Hancitor - file 0843_43.php"
-      author = "Andrew D. Pease - HuntOps.blue"
-      reference = "https://huntops.blue/2020/03/20/hancitor.html"
-      date = "2020-03-18"
-      hash1 = "4f6d4d8f279c03f1ddfa20f95af152109b7578a2bec0a16a56ff87745585169a"
-   strings:
-      $s1 = "SE670131329809.vbs" fullword ascii
-      $s2 = "SE670131329809.vbsPK" fullword ascii
-      $s3 = "SpY';q" fullword ascii
-      $s4 = "nhA* ;P7m" fullword ascii
-      $s5 = "TVAYOo7" fullword ascii
-      $s6 = "#b* Se+" fullword ascii
-      $s7 = "].UQr " fullword ascii
-      $s8 = "KyIo?$ z" fullword ascii
-      $s9 = "ANsrtnL" fullword ascii
-      $s10 = "sdTEC4'." fullword ascii
-      $s11 = "iQgMVDj" fullword ascii
-      $s12 = "EOJI!|" fullword ascii
-      $s13 = "Isjr!!P0" fullword ascii
-      $s14 = "e.awB+" fullword ascii
-      $s15 = "}QQQKSd9?" fullword ascii
-      $s16 = "ZnwOC5Z" fullword ascii
-      $s17 = "ZugG{Am" fullword ascii
-      $s18 = "&9TFubD1M" fullword ascii
-      $s19 = "gZTU?8" fullword ascii
-      $s20 = "NxWgQhY" fullword ascii
-   condition:
-      uint16(0) == 0x4b50 and filesize < 700KB and
-      8 of them
-}
+import "pe"
 
-rule Hancitor {
+rule _Users_andrew_Downloads_hancitor_1 {
    meta:
-      description = "Hancitor - file forum(12).php"
-      author = "Andrew D. Pease - HuntOps.blue"
-      reference = "https://huntops.blue/2020/03/20/hancitor.html"
-      date = "2020-03-18"
-      hash1 = "7178eac489be92a096631a3857bdf124e43c6d72ba10006b9861564a0d9752a7"
-   strings:
-      $s1 = "FYBUARRABw==" fullword ascii
-   condition:
-      uint16(0) == 0x5946 and filesize < 1KB and
-      all of them
-}
-
-rule Hancitor {
-   meta:
-      description = "Hancitor - file forum(2).php"
-      author = "Andrew D. Pease - HuntOps.blue"
-      reference = "https://huntops.blue/2020/03/20/hancitor.html"
-      date = "2020-03-18"
-      hash1 = "4f2f18e31a46f21b20dd0c1bd71f48038582da19603cbb550df0fb2a1ce323d5"
-   strings:
-      $s1 = "NMNMARZAEg4OCkBVVQkSFQpUGwgOGxwcExQTDg4fH1QZFRdVDQpXExQZFg8eHwlVCRUeEw8XJRkVFwobDlVLBhIODgpAVVUYHw4bVBsIDhscHBMUEw4OHx9UGRUXVQ0K" ascii
-      $s2 = "VBkVF1UNClcTFBkWDx4fCVUcFRQOCVVIBhIODgoJQFVVCRMJCVQZFVQTFFVIBhIODgpAVVUXExkIFRgWGx4TFB0RDxYPGA9UGRUXVUgGEg4OCkBVVQkOFRkRFxsIER8O" ascii
-      $s3 = "VxMUGRYPHh8JVRwVFA4JVUsGEg4OCglAVVUJEwkJVBkVVBMUVUsGEg4OCkBVVRcTGQgVGBYbHhMUHREPFg8YD1QZFRdVSwYSDg4KQFVVCQ4VGREXGwgRHw4IHwwVFg8O" ascii
-      $s4 = "NMNMARZAEg4OCkBVVQkSFQpUGwgOGxwcExQTDg4fH1QZFRdVDQpXExQZFg8eHwlVCRUeEw8XJRkVFwobDlVLBhIODgpAVVUYHw4bVBsIDhscHBMUEw4OHx9UGRUXVQ0K" ascii
-      $s5 = "ExUUVBkVF1VLBwEYQBIODgpAVVUJEhUKVBsIDhscHBMUEw4OHx9UGRUXVQ0KVxMUGRYPHh8JVQkVHhMPFyUZFRcKGw5VSAYSDg4KQFVVGB8OG1QbCA4bHBwTFBMODh8f" ascii
-      $s6 = "CB8MFRYPDhMVFFQZFRdVSAc=" fullword ascii
-   condition:
-      uint16(0) == 0x4d4e and filesize < 1KB and
-      all of them
-}
-
-rule Hancitor {
-   meta:
-      description = "Hancitor - file forum(8).php"
-      author = "Andrew D. Pease - HuntOps.blue"
-      reference = "https://huntops.blue/2020/03/20/hancitor.html"
-      date = "2020-03-18"
-      hash1 = "b4f1519e9814668f7f01188b02ba7965a5e8d39fa9ab671bcfbbd3ddd259c541"
-   strings:
-      $s1 = "CMNXARRABw==" fullword ascii
-   condition:
-      uint16(0) == 0x4d43 and filesize < 1KB and
-      all of them
-}
-
-rule Hancitor {
-   meta:
-      description = "Hancitor - file 2"
-      author = "Andrew D. Pease - HuntOps.blue"
-      reference = "https://huntops.blue/2020/03/20/hancitor.html"
-      date = "2020-03-18"
-      hash1 = "4c8c3005642b01eb3db098b34ce3c7a089f12566bd67a7720c48e2fe751bfcb1"
-   strings:
-      $s1 = "wVfHWoS" fullword ascii
-      $s2 = "tuTo>2TL" fullword ascii
-      $s3 = "\\hDxTO" fullword ascii
-      $s4 = "tfxPR1" fullword ascii
-      $s5 = "vbT*<%TI" fullword ascii
-      $s6 = "NbT*4%TQ" fullword ascii
-      $s7 = "(f9EYS" fullword ascii
-      $s8 = "g@CV<i" fullword ascii
-      $s9 = "h!FT9a" fullword ascii
-      $s10 = "!|%@@H" fullword ascii
-      $s11 = "bTxm%[" fullword ascii
-      $s12 = "ZTV+1Z" fullword ascii
-      $s13 = "Z-%2Qb" fullword ascii
-      $s14 = "^U0l!XTm" fullword ascii
-      $s15 = "bT*|%T" fullword ascii
-      $s16 = "`:_aUH" fullword ascii
-      $s17 = "-t9|kZ[" fullword ascii
-      $s18 = "&bT*l%Ty" fullword ascii
-      $s19 = "hB5N5U" fullword ascii
-      $s20 = "L7ElRe" fullword ascii
-   condition:
-      uint16(0) == 0xa880 and filesize < 100KB and
-      8 of them
-}
-
-rule Hancitor {
-   meta:
-      description = "Hancitor - file 1"
-      author = "Andrew D. Pease - HuntOps.blue"
-      reference = "https://huntops.blue/2020/03/20/hancitor.html"
-      date = "2020-03-18"
+      description = "hancitor - file 1"
+      author = "Andrew D. Pease HuntOps.blue"
+      reference = "https://github.com/Neo23x0/yarGen"
+      date = "2020-03-19"
       hash1 = "d1e56e455e3a50d8e461665e46deb1979a642b32710433f59e7a16fb5e4abada"
    strings:
       $s1 = "PUhR/TV" fullword ascii
@@ -175,12 +64,158 @@ rule Hancitor {
       8 of them
 }
 
-rule Hancitor {
+rule _Users_andrew_Downloads_hancitor_adobe {
    meta:
-      description = "Hancitor - file forum(20).php"
-      author = "Andrew D. Pease - HuntOps.blue"
-      reference = "https://huntops.blue/2020/03/20/hancitor.html"
-      date = "2020-03-18"
+      description = "hancitor - file adobe.txt"
+      author = "Andrew D. Pease HuntOps.blue"
+      reference = "https://github.com/Neo23x0/yarGen"
+      date = "2020-03-19"
+      hash1 = "291a4eb06358eca87fbc1f133ee162b6c532f4ec3e6f39c2646cde5de60e80f9"
+   strings:
+      $s1 = "mcipdate.exe" fullword wide
+      $s2 = "ZFojdXtrTY" fullword ascii /* base64 encoded string 'dZ#u{kM' */
+      $s3 = "/!E_3?" fullword ascii /* reversed goodware string '?3_E!/' */
+      $s4 = "<description>Media Center Update Manager</description> " fullword ascii
+      $s5 = "sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssj" fullword ascii
+      $s6 = "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb" ascii
+      $s7 = "ksssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss" fullword ascii
+      $s8 = "sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss" fullword ascii
+      $s9 = "ksssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssr" fullword ascii
+      $s10 = "hsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss" fullword ascii
+      $s11 = "rsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssw" fullword ascii
+      $s12 = "csssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss" fullword ascii
+      $s13 = "bsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss" fullword ascii
+      $s14 = "nsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssk" fullword ascii
+      $s15 = "tsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss" fullword ascii
+      $s16 = "sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssc" fullword ascii
+      $s17 = "sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssa" fullword ascii
+      $s18 = "sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssf" fullword ascii
+      $s19 = "sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssn" fullword ascii
+      $s20 = "sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssm" fullword ascii
+   condition:
+      uint16(0) == 0x5a4d and filesize < 700KB and
+      ( pe.imphash() == "19fe2499af089ee526636b0e5063dc97" or 8 of them )
+}
+
+rule forum_12_ {
+   meta:
+      description = "hancitor - file forum(12).php"
+      author = "Andrew D. Pease HuntOps.blue"
+      reference = "https://github.com/Neo23x0/yarGen"
+      date = "2020-03-19"
+      hash1 = "7178eac489be92a096631a3857bdf124e43c6d72ba10006b9861564a0d9752a7"
+   strings:
+      $s1 = "FYBUARRABw==" fullword ascii
+   condition:
+      uint16(0) == 0x5946 and filesize < 1KB and
+      all of them
+}
+
+rule forum_2_ {
+   meta:
+      description = "hancitor - file forum(2).php"
+      author = "Andrew D. Pease HuntOps.blue"
+      reference = "https://github.com/Neo23x0/yarGen"
+      date = "2020-03-19"
+      hash1 = "4f2f18e31a46f21b20dd0c1bd71f48038582da19603cbb550df0fb2a1ce323d5"
+   strings:
+      $s1 = "NMNMARZAEg4OCkBVVQkSFQpUGwgOGxwcExQTDg4fH1QZFRdVDQpXExQZFg8eHwlVCRUeEw8XJRkVFwobDlVLBhIODgpAVVUYHw4bVBsIDhscHBMUEw4OHx9UGRUXVQ0K" ascii
+      $s2 = "VBkVF1UNClcTFBkWDx4fCVUcFRQOCVVIBhIODgoJQFVVCRMJCVQZFVQTFFVIBhIODgpAVVUXExkIFRgWGx4TFB0RDxYPGA9UGRUXVUgGEg4OCkBVVQkOFRkRFxsIER8O" ascii
+      $s3 = "VxMUGRYPHh8JVRwVFA4JVUsGEg4OCglAVVUJEwkJVBkVVBMUVUsGEg4OCkBVVRcTGQgVGBYbHhMUHREPFg8YD1QZFRdVSwYSDg4KQFVVCQ4VGREXGwgRHw4IHwwVFg8O" ascii
+      $s4 = "NMNMARZAEg4OCkBVVQkSFQpUGwgOGxwcExQTDg4fH1QZFRdVDQpXExQZFg8eHwlVCRUeEw8XJRkVFwobDlVLBhIODgpAVVUYHw4bVBsIDhscHBMUEw4OHx9UGRUXVQ0K" ascii
+      $s5 = "ExUUVBkVF1VLBwEYQBIODgpAVVUJEhUKVBsIDhscHBMUEw4OHx9UGRUXVQ0KVxMUGRYPHh8JVQkVHhMPFyUZFRcKGw5VSAYSDg4KQFVVGB8OG1QbCA4bHBwTFBMODh8f" ascii
+      $s6 = "CB8MFRYPDhMVFFQZFRdVSAc=" fullword ascii
+   condition:
+      uint16(0) == 0x4d4e and filesize < 1KB and
+      all of them
+}
+
+rule forum_8_ {
+   meta:
+      description = "hancitor - file forum(8).php"
+      author = "Andrew D. Pease HuntOps.blue"
+      reference = "https://github.com/Neo23x0/yarGen"
+      date = "2020-03-19"
+      hash1 = "b4f1519e9814668f7f01188b02ba7965a5e8d39fa9ab671bcfbbd3ddd259c541"
+   strings:
+      $s1 = "CMNXARRABw==" fullword ascii
+   condition:
+      uint16(0) == 0x4d43 and filesize < 1KB and
+      all of them
+}
+
+rule _Users_andrew_Downloads_hancitor_2 {
+   meta:
+      description = "hancitor - file 2"
+      author = "Andrew D. Pease HuntOps.blue"
+      reference = "https://github.com/Neo23x0/yarGen"
+      date = "2020-03-19"
+      hash1 = "4c8c3005642b01eb3db098b34ce3c7a089f12566bd67a7720c48e2fe751bfcb1"
+   strings:
+      $s1 = "wVfHWoS" fullword ascii
+      $s2 = "tuTo>2TL" fullword ascii
+      $s3 = "\\hDxTO" fullword ascii
+      $s4 = "tfxPR1" fullword ascii
+      $s5 = "vbT*<%TI" fullword ascii
+      $s6 = "NbT*4%TQ" fullword ascii
+      $s7 = "(f9EYS" fullword ascii
+      $s8 = "g@CV<i" fullword ascii
+      $s9 = "h!FT9a" fullword ascii
+      $s10 = "!|%@@H" fullword ascii
+      $s11 = "bTxm%[" fullword ascii
+      $s12 = "ZTV+1Z" fullword ascii
+      $s13 = "Z-%2Qb" fullword ascii
+      $s14 = "^U0l!XTm" fullword ascii
+      $s15 = "(l#P\\%" fullword ascii
+      $s16 = "`:_aUH" fullword ascii
+      $s17 = "-t9|kZ[" fullword ascii
+      $s18 = "&bT*l%Ty" fullword ascii
+      $s19 = "hB5N5U" fullword ascii
+      $s20 = "L7ElRe" fullword ascii
+   condition:
+      uint16(0) == 0xa880 and filesize < 100KB and
+      8 of them
+}
+
+rule _Users_andrew_Downloads_hancitor_0843_43 {
+   meta:
+      description = "hancitor - file 0843_43.php"
+      author = "Andrew D. Pease HuntOps.blue"
+      reference = "https://github.com/Neo23x0/yarGen"
+      date = "2020-03-19"
+      hash1 = "4f6d4d8f279c03f1ddfa20f95af152109b7578a2bec0a16a56ff87745585169a"
+   strings:
+      $s1 = "SE670131329809.vbs" fullword ascii
+      $s2 = "SE670131329809.vbsPK" fullword ascii
+      $s3 = "SpY';q" fullword ascii
+      $s4 = "nhA* ;P7m" fullword ascii
+      $s5 = "TVAYOo7" fullword ascii
+      $s6 = "#b* Se+" fullword ascii
+      $s7 = "].UQr " fullword ascii
+      $s8 = "KyIo?$ z" fullword ascii
+      $s9 = "ANsrtnL" fullword ascii
+      $s10 = "sdTEC4'." fullword ascii
+      $s11 = "iQgMVDj" fullword ascii
+      $s12 = "EOJI!|" fullword ascii
+      $s13 = "Isjr!!P0" fullword ascii
+      $s14 = "e.awB+" fullword ascii
+      $s15 = "}QQQKSd9?" fullword ascii
+      $s16 = "ZnwOC5Z" fullword ascii
+      $s17 = "ZugG{Am" fullword ascii
+      $s18 = "&9TFubD1M" fullword ascii
+      $s19 = "gZTU?8" fullword ascii
+      $s20 = "NxWgQhY" fullword ascii
+   condition:
+      uint16(0) == 0x4b50 and filesize < 700KB and
+      8 of them
+}
+
+rule forum_20_ {
+   meta:
+      description = "hancitor - file forum(20).php"
+      author = "Andrew D. Pease HuntOps.blue"
+      reference = "https://github.com/Neo23x0/yarGen"
+      date = "2020-03-19"
       hash1 = "d1545c0c22c9496115d98a2a804cd457fa76a98ce1393e470b036c37225ae2fc"
    strings:
       $s1 = "AZAZARRABw==" fullword ascii
@@ -189,12 +224,12 @@ rule Hancitor {
       all of them
 }
 
-rule Hancitor {
+rule _Users_andrew_Downloads_hancitor_forum {
    meta:
-      description = "Hancitor - file forum.php"
-      author = "Andrew D. Pease - HuntOps.blue"
-      reference = "https://huntops.blue/2020/03/20/hancitor.html"
-      date = "2020-03-18"
+      description = "hancitor - file forum.php"
+      author = "Andrew D. Pease HuntOps.blue"
+      reference = "https://github.com/Neo23x0/yarGen"
+      date = "2020-03-19"
       hash1 = "d83cf47ab578d539b97d79006c136864357f22f9fe62f19abb226a8d5b2944d7"
    strings:
       $s1 = "GUID=10108318379165689344&BUILD=0903_7832478324&INFO=UMBRELLA-WIN10 @ UMBRELLA-WIN10\\rhianna&IP=173.6.46.112&TYPE=1&WIN=10.0(x6" ascii
@@ -205,12 +240,12 @@ rule Hancitor {
       all of them
 }
 
-rule Hancitor {
+rule SE670131329809 {
    meta:
-      description = "Hancitor - file SE670131329809.vbs"
-      author = "Andrew D. Pease - HuntOps.blue"
-      reference = "https://huntops.blue/2020/03/20/hancitor.html"
-      date = "2020-03-18"
+      description = "hancitor - file SE670131329809.vbs"
+      author = "Andrew D. Pease HuntOps.blue"
+      reference = "https://github.com/Neo23x0/yarGen"
+      date = "2020-03-19"
       hash1 = "6897a3b85046ba97fb3868dfb82338e5ed098136720a6cf73625e784fc1e1e51"
    strings:
       $x1 = ".Create \"regsvr32.exe -s \"+CStr(WScript.CreateObject(\"Scripting.FileSystemObject\").GetSpecialFolder(Cint(\"2\"))+\"\\\")+\"a" ascii
@@ -228,11 +263,11 @@ rule Hancitor {
       $s13 = "184l184l184l184l184l184l184l184l184l184l184l184l184l184l184l184l184l184l184l184l184l184l184l184l76l275l136l69l319l274l135l69l316" ascii
       $s14 = "5l252l154l83l81l203l148l283l317l103l110l257l151l100l186l260l324l101l146l204l85l184l184l184l184l184l184l184l184l184l184l184l184l1" ascii
       $s15 = "3l146l288l162l83l81l193l198l152l112l79l102l271l154l268l160l75l89l129l283l133l146l208l160l91l89l147l289l237l71l241l281l237l242l12" ascii
-      $s16 = "69l316l275l99l264l248l103l212l273l127l167l244l200l167l298l256l185l306l168l75l81l254l275l136l120l204l136l116l254l267l275l136l69l1" ascii
-      $s17 = "8l136l85l75l101l155l73l108l274l152l304l266l287l200l162l185l85l212l273l184l85l212l273l319l232l244l200l295l276l284l69l268l276l124l" ascii
-      $s18 = "269l138l80l221l84l85l204l199l109l154l296l257l269l138l288l220l83l77l184l184l184l184l184l184l184l184l184l184l184l184l184l184l184l1" ascii
-      $s19 = "l136l69l316l96l257l324l316l96l257l324l232l307l136l69l90l307l136l69l188l275l135l69l248l242l123l179l169l235l107l183l256l199l84l115" ascii
-      $s20 = "69l140l274l136l69l316l306l136l69l74l307l136l69l118l249l136l69l98l249l136l69l320l251l136l69l76l252l136l69l106l252l136l69l80l252l1" ascii
+      $s16 = "8l136l85l75l101l155l73l108l274l152l304l266l287l200l162l185l85l212l273l184l85l212l273l319l232l244l200l295l276l284l69l268l276l124l" ascii
+      $s17 = "269l138l80l221l84l85l204l199l109l154l296l257l269l138l288l220l83l77l184l184l184l184l184l184l184l184l184l184l184l184l184l184l184l1" ascii
+      $s18 = "l136l69l316l96l257l324l316l96l257l324l232l307l136l69l90l307l136l69l188l275l135l69l248l242l123l179l169l235l107l183l256l199l84l115" ascii
+      $s19 = "69l140l274l136l69l316l306l136l69l74l307l136l69l118l249l136l69l98l249l136l69l320l251l136l69l76l252l136l69l106l252l136l69l80l252l1" ascii
+      $s20 = "184l184l184l184l184l184l184l184l184l184l184l184l184l255l97l134l150l136l224l91l297l260l96l257l324l124l194l208l74l257l203l236l210l" ascii
    condition:
       uint16(0) == 0x3327 and filesize < 3000KB and
       1 of ($x*) and 4 of them
