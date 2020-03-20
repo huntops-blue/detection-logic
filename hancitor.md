@@ -13,8 +13,8 @@ Query:
   OR freetospeak.me OR 68.208.77.171 OR shop.artaffinittee.com OR
   68.183.232.255 OR 5c9c955449d010d25a03f8cef9d96b41 OR
   8eb933c84e7777c7b623f19489a59a2a OR 19fe0b844a00c57f60a0d9d29e6974e7
-  OR 204f36fb236065964964a61d4d7b1b9c OR /4/forum.php OR /d2/about.php OR
-  /mlu/forum.php)
+  OR 204f36fb236065964964a61d4d7b1b9c OR 6ad619702dad7c8fc1cefd3bc7967cf4
+  OR /4/forum.php OR /d2/about.php OR /mlu/forum.php)
 ```
 
 ## Yara
@@ -254,6 +254,7 @@ shop[.]artaffinittee[.]com - Part of Hancitor infrastructure
 68[.]183[.]232[.]255 - Part of Hancitor infrastructure
 5c9c955449d010d25a03f8cef9d96b41 - VBScript archive (0843_43.php)
 8eb933c84e7777c7b623f19489a59a2a - VBScript dropper (SE670131329809.vbs)
+6ad619702dad7c8fc1cefd3bc7967cf4 - Hancitor binary
 19fe0b844a00c57f60a0d9d29e6974e7 - Part of Hancitor infrastructure (1)
 204f36fb236065964964a61d4d7b1b9c - Part of Hancitor infrastructure (2)
 [A-Za-z]{2}-[0-9]{12}_[0-9]{4}.zip - Regex for the VBScript archive
@@ -320,11 +321,11 @@ https://www.activeresponse.org/wp-content/uploads/2013/07/diamond.pdf
  └──────────────┘  ╲       │       ╱  │68[.]183[.]232[.]255 - Part of Hancitor infrastructure                 │
                     ╲      │      ╱   │5c9c955449d010d25a03f8cef9d96b41 - VBScript archive (0843_43.php)      │
                      ╲     │     ╱    │8eb933c84e7777c7b623f19489a59a2a - VBScript dropper                    │
-                      ╲    │    ╱     │(SE670131329809.vbs)                                                   │
-                       ╲   │   ╱      │19fe0b844a00c57f60a0d9d29e6974e7 - Part of Hancitor infrastructure (1) │
-                        ╲  │  ╱       │204f36fb236065964964a61d4d7b1b9c - Part of Hancitor infrastructure (2) │
-                         ╲ │ ╱        └───────────────────────────────────────────────────────────────────────┘
-                          ╲│╱                                                                                  
+                      ╲    │    ╱     │(SE670131329809.vbs)                                                   |
+                       \   |   /      |6ad619702dad7c8fc1cefd3bc7967cf4 - Hancitor binary                     │
+                        ╲  │  ╱       │19fe0b844a00c57f60a0d9d29e6974e7 - Part of Hancitor infrastructure (1) │
+                         ╲ │ ╱        │204f36fb236065964964a61d4d7b1b9c - Part of Hancitor infrastructure (2) │
+                          ╲│╱         └───────────────────────────────────────────────────────────────────────┘
                            V                                                                                   
                      ┌───────────┐                                                                             
                      │  Victim   │                                                                             
