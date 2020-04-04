@@ -31,7 +31,7 @@ Query:
 
 import "pe"
 
-rule _Users_andrew_Downloads_hancitor_1 {
+rule hancitor {
    meta:
       description = "hancitor - file 1"
       author = "Andrew D. Pease HuntOps.blue"
@@ -64,7 +64,7 @@ rule _Users_andrew_Downloads_hancitor_1 {
       8 of them
 }
 
-rule _Users_andrew_Downloads_hancitor_adobe {
+rule hancitor {
    meta:
       description = "hancitor - file adobe.txt"
       author = "Andrew D. Pease HuntOps.blue"
@@ -97,7 +97,7 @@ rule _Users_andrew_Downloads_hancitor_adobe {
       ( pe.imphash() == "19fe2499af089ee526636b0e5063dc97" or 8 of them )
 }
 
-rule forum_12_ {
+rule hancitor {
    meta:
       description = "hancitor - file forum(12).php"
       author = "Andrew D. Pease HuntOps.blue"
@@ -111,7 +111,7 @@ rule forum_12_ {
       all of them
 }
 
-rule forum_2_ {
+rule hancitor {
    meta:
       description = "hancitor - file forum(2).php"
       author = "Andrew D. Pease HuntOps.blue"
@@ -130,7 +130,7 @@ rule forum_2_ {
       all of them
 }
 
-rule forum_8_ {
+rule hancitor {
    meta:
       description = "hancitor - file forum(8).php"
       author = "Andrew D. Pease HuntOps.blue"
@@ -144,7 +144,7 @@ rule forum_8_ {
       all of them
 }
 
-rule _Users_andrew_Downloads_hancitor_2 {
+rule hancitor {
    meta:
       description = "hancitor - file 2"
       author = "Andrew D. Pease HuntOps.blue"
@@ -177,7 +177,7 @@ rule _Users_andrew_Downloads_hancitor_2 {
       8 of them
 }
 
-rule _Users_andrew_Downloads_hancitor_0843_43 {
+rule hancitor {
    meta:
       description = "hancitor - file 0843_43.php"
       author = "Andrew D. Pease HuntOps.blue"
@@ -210,7 +210,7 @@ rule _Users_andrew_Downloads_hancitor_0843_43 {
       8 of them
 }
 
-rule forum_20_ {
+rule hancitor {
    meta:
       description = "hancitor - file forum(20).php"
       author = "Andrew D. Pease HuntOps.blue"
@@ -224,7 +224,7 @@ rule forum_20_ {
       all of them
 }
 
-rule _Users_andrew_Downloads_hancitor_forum {
+rule hancitor {
    meta:
       description = "hancitor - file forum.php"
       author = "Andrew D. Pease HuntOps.blue"
@@ -240,7 +240,7 @@ rule _Users_andrew_Downloads_hancitor_forum {
       all of them
 }
 
-rule SE670131329809 {
+rule hancitor {
    meta:
       description = "hancitor - file SE670131329809.vbs"
       author = "Andrew D. Pease HuntOps.blue"
