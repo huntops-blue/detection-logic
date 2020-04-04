@@ -23,19 +23,19 @@ Query:
    YARA Rule Set
    Author: Andrew D. Pease HuntOps.blue
    Date: 2020-03-19
-   Identifier: hancitor
-   Reference: https://github.com/Neo23x0/yarGen
+   Identifier: Hancitor
+   Reference: https://huntops.blue/2020/03/20/hancitor.html
 */
 
 /* Rule Set ----------------------------------------------------------------- */
 
 import "pe"
 
-rule hancitor {
+rule Hancitor {
    meta:
       description = "hancitor - file 1"
       author = "Andrew D. Pease HuntOps.blue"
-      reference = "https://github.com/Neo23x0/yarGen"
+      reference = "https://huntops.blue/2020/03/20/hancitor.html"
       date = "2020-03-19"
       hash1 = "d1e56e455e3a50d8e461665e46deb1979a642b32710433f59e7a16fb5e4abada"
    strings:
@@ -64,11 +64,11 @@ rule hancitor {
       8 of them
 }
 
-rule hancitor {
+rule Hancitor {
    meta:
       description = "hancitor - file adobe.txt"
       author = "Andrew D. Pease HuntOps.blue"
-      reference = "https://github.com/Neo23x0/yarGen"
+      reference = "https://huntops.blue/2020/03/20/hancitor.html"
       date = "2020-03-19"
       hash1 = "291a4eb06358eca87fbc1f133ee162b6c532f4ec3e6f39c2646cde5de60e80f9"
    strings:
@@ -97,11 +97,11 @@ rule hancitor {
       ( pe.imphash() == "19fe2499af089ee526636b0e5063dc97" or 8 of them )
 }
 
-rule hancitor {
+rule Hancitor {
    meta:
       description = "hancitor - file forum(12).php"
       author = "Andrew D. Pease HuntOps.blue"
-      reference = "https://github.com/Neo23x0/yarGen"
+      reference = "https://huntops.blue/2020/03/20/hancitor.html"
       date = "2020-03-19"
       hash1 = "7178eac489be92a096631a3857bdf124e43c6d72ba10006b9861564a0d9752a7"
    strings:
@@ -111,11 +111,11 @@ rule hancitor {
       all of them
 }
 
-rule hancitor {
+rule Hancitor {
    meta:
       description = "hancitor - file forum(2).php"
       author = "Andrew D. Pease HuntOps.blue"
-      reference = "https://github.com/Neo23x0/yarGen"
+      reference = "https://huntops.blue/2020/03/20/hancitor.html"
       date = "2020-03-19"
       hash1 = "4f2f18e31a46f21b20dd0c1bd71f48038582da19603cbb550df0fb2a1ce323d5"
    strings:
@@ -130,11 +130,11 @@ rule hancitor {
       all of them
 }
 
-rule hancitor {
+rule Hancitor {
    meta:
       description = "hancitor - file forum(8).php"
       author = "Andrew D. Pease HuntOps.blue"
-      reference = "https://github.com/Neo23x0/yarGen"
+      reference = "https://huntops.blue/2020/03/20/hancitor.html"
       date = "2020-03-19"
       hash1 = "b4f1519e9814668f7f01188b02ba7965a5e8d39fa9ab671bcfbbd3ddd259c541"
    strings:
@@ -144,11 +144,11 @@ rule hancitor {
       all of them
 }
 
-rule hancitor {
+rule Hancitor {
    meta:
       description = "hancitor - file 2"
       author = "Andrew D. Pease HuntOps.blue"
-      reference = "https://github.com/Neo23x0/yarGen"
+      reference = "https://huntops.blue/2020/03/20/hancitor.html"
       date = "2020-03-19"
       hash1 = "4c8c3005642b01eb3db098b34ce3c7a089f12566bd67a7720c48e2fe751bfcb1"
    strings:
@@ -177,11 +177,11 @@ rule hancitor {
       8 of them
 }
 
-rule hancitor {
+rule Hancitor {
    meta:
       description = "hancitor - file 0843_43.php"
       author = "Andrew D. Pease HuntOps.blue"
-      reference = "https://github.com/Neo23x0/yarGen"
+      reference = "https://huntops.blue/2020/03/20/hancitor.html"
       date = "2020-03-19"
       hash1 = "4f6d4d8f279c03f1ddfa20f95af152109b7578a2bec0a16a56ff87745585169a"
    strings:
@@ -210,11 +210,11 @@ rule hancitor {
       8 of them
 }
 
-rule hancitor {
+rule Hancitor {
    meta:
       description = "hancitor - file forum(20).php"
       author = "Andrew D. Pease HuntOps.blue"
-      reference = "https://github.com/Neo23x0/yarGen"
+      reference = "https://huntops.blue/2020/03/20/hancitor.html"
       date = "2020-03-19"
       hash1 = "d1545c0c22c9496115d98a2a804cd457fa76a98ce1393e470b036c37225ae2fc"
    strings:
@@ -224,11 +224,11 @@ rule hancitor {
       all of them
 }
 
-rule hancitor {
+rule Hancitor {
    meta:
       description = "hancitor - file forum.php"
       author = "Andrew D. Pease HuntOps.blue"
-      reference = "https://github.com/Neo23x0/yarGen"
+      reference = "https://huntops.blue/2020/03/20/hancitor.html"
       date = "2020-03-19"
       hash1 = "d83cf47ab578d539b97d79006c136864357f22f9fe62f19abb226a8d5b2944d7"
    strings:
@@ -240,11 +240,11 @@ rule hancitor {
       all of them
 }
 
-rule hancitor {
+rule Hancitor {
    meta:
       description = "hancitor - file SE670131329809.vbs"
       author = "Andrew D. Pease HuntOps.blue"
-      reference = "https://github.com/Neo23x0/yarGen"
+      reference = "https://huntops.blue/2020/03/20/hancitor.html"
       date = "2020-03-19"
       hash1 = "6897a3b85046ba97fb3868dfb82338e5ed098136720a6cf73625e784fc1e1e51"
    strings:
